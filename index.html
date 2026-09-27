@@ -1356,17 +1356,17 @@ function chrome(inner, opts = {}) {
 function viewHome() {
   const done = Object.keys(S.quiz).filter(k => S.quiz[k] > 0).length;
   const hr = new Date().getHours();
-  const greet = hr < 12 ? "صباح الخير" : "مساء الخير";
+  const greet = hr < 12 ? "GOOD MORNING" : "GOOD EVENING";
   const next = LESSONS.find(l => !S.quiz[l.id]) || LESSONS[0];
   chrome(`
     <section class="home-hero">
-      <div class="hero-copy"><span class="hero-kicker">GRADE 12A · SEMESTER ONE</span><h1>${greet}، خلّنا ننجز ✦</h1><p>شرح بصري، تدريب ذكي، وتحديات توصّلك للاختبار بثقة.</p><button class="hero-cta" data-go="#/l/${next.id}/explain">تابع رحلتك <span>←</span></button></div>
+      <div class="hero-copy" dir="ltr"><span class="hero-kicker">GRADE 12A · SEMESTER ONE</span><h1>${greet}, LET'S ACHIEVE ✦</h1><p>Clear explanations, interactive games, tests, and exams to help you succeed with confidence.</p><button class="hero-cta" data-go="#/l/${next.id}/explain">CONTINUE YOUR JOURNEY <span>→</span></button></div>
       <svg class="hero-art" viewBox="0 0 240 220" aria-hidden="true"><circle cx="110" cy="112" r="76" fill="#fff" opacity=".08"/><path d="M48 170h150" stroke="#fff" opacity=".18" stroke-width="3" stroke-linecap="round"/><g class="float"><rect x="58" y="47" width="112" height="133" rx="18" fill="#fff"/><rect x="72" y="63" width="84" height="11" rx="5" fill="#E7EAFA"/><rect x="72" y="84" width="62" height="8" rx="4" fill="#DAF1E8"/><rect x="72" y="101" width="74" height="8" rx="4" fill="#FCEBDD"/><circle cx="91" cy="139" r="19" fill="#6F7DD0"/><path d="M82 140l7 7 13-18" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M128 132h28M128 145h20" stroke="#D5E2DB" stroke-width="7" stroke-linecap="round"/></g><path d="M154 31l19-11 19 11-19 11z" fill="#F2BE45"/><path d="M188 32v17" stroke="#F2BE45" stroke-width="4" stroke-linecap="round"/><circle cx="42" cy="82" r="6" fill="#5CC6A6"/><path d="M37 25l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#fff" opacity=".75"/></svg>
     </section>
     <div class="stats home-stats">
-      <div class="stat"><b>${done}/${LESSONS.length}</b><span>دروس مجتازة</span></div>
-      <div class="stat"><b>${totalStars()}</b><span>نجمة من ${maxStars()}</span></div>
-      <div class="stat"><b>${S.finalBest == null ? "—" : S.finalBest + "%"}</b><span>أفضل نتيجة نهائي</span></div>
+      <div class="stat"><b>${done}/${LESSONS.length}</b><span>Completed Lessons</span></div>
+      <div class="stat"><b>${totalStars()}</b><span>Score out of ${maxStars()}</span></div>
+      <div class="stat"><b>${S.finalBest == null ? "—" : S.finalBest + "%"}</b><span>Best Final Result</span></div>
     </div>
     ${(() => { const all = LESSONS.flatMap(l => l.vocab.map(v => ({ en: v[0], ar: v[1], l }))); const w = all[Math.floor(Date.now() / 864e5) % all.length];
       return `<div class="wod"><span class="wod-emo">${pic(w.en)}</span><div style="flex:1"><small>كلمة اليوم</small><b class="en">${esc(w.en)}</b><span>${esc(w.ar)}</span></div>${sayBtn(w.en)}</div>`; })()}
