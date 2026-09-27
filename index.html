@@ -83,6 +83,34 @@ img,svg{ max-width:100%; }
 .final-card p{ margin:0; font-size:14px; opacity:.8; }
 .tip{ margin-top:20px; background:var(--bg2); border-radius:var(--r-md); padding:12px 16px; font-size:15px; }
 
+/* grade 12 home dashboard */
+.home-hero{ position:relative; overflow:hidden; min-height:250px; margin:16px 0 12px; padding:24px; border-radius:30px; background:linear-gradient(135deg,#202B45 0%,#303B67 55%,#68589A 100%); color:#fff; box-shadow:0 18px 45px -24px rgba(32,43,69,.8); }
+.home-hero::before,.home-hero::after{ content:""; position:absolute; border-radius:50%; filter:blur(1px); opacity:.22; background:#fff; }
+.home-hero::before{ width:190px; height:190px; left:-70px; top:-90px; }.home-hero::after{ width:140px; height:140px; right:28%; bottom:-95px; }
+.hero-copy{ position:relative; z-index:2; max-width:64%; }
+.hero-kicker{ display:inline-flex; align-items:center; gap:6px; padding:4px 11px; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.1); border-radius:99px; font-size:12px; font-weight:700; }
+.hero-copy h1{ font:800 31px/1.25 var(--hf); margin:12px 0 6px; }
+.hero-copy p{ margin:0; color:rgba(255,255,255,.75); font-size:14px; }
+.hero-cta{ display:inline-flex; align-items:center; gap:7px; margin-top:16px; padding:9px 15px; border-radius:13px; background:#fff; color:#28324F; font-weight:800; }
+.hero-art{ position:absolute; left:12px; bottom:0; width:235px; height:220px; z-index:1; }
+.hero-art .float{ transform-origin:center; animation:floatCard 3.4s ease-in-out infinite; }
+@keyframes floatCard{ 50%{ transform:translateY(-7px) rotate(1deg); } }
+.home-stats{ margin-top:-34px; position:relative; z-index:3; padding-inline:16px; }
+.home-stats .stat{ border:1px solid color-mix(in srgb,var(--line) 60%,transparent); }
+.dash-title{ display:flex; justify-content:space-between; align-items:end; gap:12px; margin:24px 2px 10px; }
+.dash-title h2{ margin:0; font:800 22px/1.2 var(--hf); }.dash-title span{ color:var(--muted); font-size:13px; }
+.portal-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:11px; }
+.portal{ position:relative; overflow:hidden; min-height:175px; padding:15px; border-radius:23px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow); text-align:right; transition:transform .2s; }
+.portal:hover{ transform:translateY(-3px); }.portal:active{ transform:scale(.98); }
+.portal .art{ height:76px; display:grid; place-items:center; margin-bottom:8px; }
+.portal svg{ width:118px; height:76px; overflow:visible; }
+.portal strong{ display:block; font:800 18px/1.2 var(--hf); }.portal small{ display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+.portal .arrow{ position:absolute; left:13px; bottom:12px; width:27px; height:27px; display:grid; place-items:center; border-radius:50%; background:var(--bg2); }
+.portal.learn{ --pc:#6F7DD0; --ps:#E7EAFA; }.portal.play{ --pc:#E08A4E; --ps:#FCEBDD; }.portal.test{ --pc:#34A083; --ps:#DAF1E8; }.portal.exam{ --pc:#3F93C6; --ps:#DCEDF8; }
+.portal .blob{ fill:var(--ps); }.portal .line{ stroke:var(--pc); }.portal .solid{ fill:var(--pc); }
+.section-label{ display:flex; align-items:center; gap:8px; margin:25px 2px 12px; }.section-label h2{ margin:0; font:800 21px/1.2 var(--hf); }.section-label::after{ content:""; height:1px; background:var(--line); flex:1; }
+@media (max-width:520px){ .home-hero{ min-height:265px; padding:20px; }.hero-copy{ max-width:72%; }.hero-copy h1{ font-size:27px; }.hero-art{ width:190px; height:180px; left:-10px; }.portal{ min-height:165px; padding:13px; }.portal strong{ font-size:16px; } }
+
 /* theme page */
 .thead{ border-radius:var(--r-lg); padding:20px; margin:14px 0 16px; background:var(--cs); display:flex; gap:14px; align-items:center; }
 .thead .emo{ font-size:44px; }
@@ -98,6 +126,12 @@ img,svg{ max-width:100%; }
 .chip{ display:inline-block; font-size:12px; padding:1px 10px; border-radius:99px; background:var(--bg2); color:var(--muted); margin-inline-start:6px; }
 .stars{ font-size:15px; letter-spacing:1px; white-space:nowrap; }
 .stars .off{ opacity:.22; filter:grayscale(1); }
+.unit-card{ background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--shadow); padding:13px; }
+.unit-main{ width:100%; display:flex; align-items:center; gap:12px; text-align:right; }
+.unit-main:active{ transform:scale(.99); }
+.unit-actions{ display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-top:11px; padding-top:10px; border-top:1px solid var(--line); }
+.unit-actions button{ border-radius:11px; padding:7px 5px; background:var(--bg2); color:var(--muted); font-size:12px; font-weight:700; }
+.unit-actions button:hover{ background:var(--cs); color:var(--ink); }
 
 /* lesson */
 .ltitle{ margin:14px 0 4px; }
@@ -250,6 +284,63 @@ img,svg{ max-width:100%; }
 .wod-emo{ font-size:44px; }
 .wod small{ display:block; color:var(--muted); font-size:13px; }
 .wod b{ display:block; font-family:var(--hf); font-size:22px; line-height:1.2; text-align:right; }
+.verb-hero{ width:100%; aspect-ratio:16/7; object-fit:cover; border-radius:var(--r-md); margin-bottom:14px; box-shadow:var(--shadow); }
+.verb-intro{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.verb-intro .badge{ flex:none; background:var(--t1s); color:var(--t1); border-radius:99px; padding:5px 11px; font-weight:700; font-size:13px; }
+.verb-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:9px; }
+.verb-card{ background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:11px; display:grid; grid-template-columns:44px 1fr auto; align-items:center; gap:9px; text-align:right; }
+.verb-card .vpic{ font-size:31px; text-align:center; }
+.verb-card .forms{ direction:ltr; text-align:left; font-weight:700; line-height:1.3; }
+.verb-card .forms small{ display:block; direction:rtl; text-align:left; color:var(--muted); font-weight:500; }
+.verb-card .say{ width:30px; height:30px; }
+.verb-play{ text-align:center; }
+.verb-play .vscene{ font-size:86px; line-height:1.1; margin:4px 0 6px; }
+.verb-play .meaning{ color:var(--muted); margin:0 0 12px; }
+.verb-play .base{ direction:ltr; font-family:var(--hf); font-size:30px; margin:0; }
+.form-labels{ direction:ltr; display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin:12px 0 16px; }
+.form-labels span{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:7px 4px; font-size:12px; color:var(--muted); }
+.form-labels b{ display:block; color:var(--ink); font-size:16px; }
+.syn-note{ background:linear-gradient(135deg,var(--t1s),var(--surface)); border:1px solid color-mix(in srgb,var(--t1) 30%,transparent); border-radius:var(--r-md); padding:12px 14px; margin-bottom:12px; }
+.syn-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:9px; }
+.syn-card{ position:relative; overflow:hidden; background:var(--bg2); border:1px solid var(--line); border-radius:var(--r-md); padding:12px; display:grid; grid-template-columns:42px 1fr auto; gap:9px; align-items:center; }
+.syn-card .spic{ font-size:30px; text-align:center; }
+.syn-card .pair{ direction:ltr; text-align:left; line-height:1.25; }
+.syn-card .pair b{ display:block; font-size:16px; }
+.syn-card .pair small{ direction:rtl; display:block; color:var(--muted); margin-top:3px; }
+.syn-card .pos{ position:absolute; top:5px; right:7px; font-size:10px; color:var(--muted); text-transform:uppercase; }
+.syn-play{ text-align:center; }
+.syn-play .spic{ font-size:86px; line-height:1.1; }
+.syn-play .prompt-word{ direction:ltr; font:800 32px/1.2 var(--hf); margin:4px 0; }
+.syn-streak{ display:inline-flex; gap:5px; background:var(--surface); border:1px solid var(--line); padding:5px 12px; border-radius:99px; color:var(--muted); font-size:13px; }
+.md-rule{ display:grid; grid-template-columns:1fr 1fr; gap:9px; margin:12px 0; }
+.md-rule > div{ border-radius:var(--r-md); padding:13px; background:var(--bg2); border-top:4px solid var(--c); }
+.md-rule h4{ direction:ltr; font:800 23px/1 var(--hf); margin:0 0 7px; }
+.md-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(205px,1fr)); gap:8px; }
+.md-card{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:10px; display:grid; grid-template-columns:38px 1fr auto; align-items:center; gap:7px; }
+.md-card .mpic{ font-size:27px; text-align:center; }
+.md-card b{ direction:ltr; display:block; text-align:left; line-height:1.2; }
+.md-card small{ color:var(--muted); display:block; }
+.md-card.do b{ color:var(--t4); }.md-card.make b{ color:var(--t1); }
+.md-scene{ text-align:center; }
+.md-scene .mpic{ font-size:82px; line-height:1.1; }
+.md-scene .phrase{ direction:ltr; font:800 27px/1.25 var(--hf); margin:4px 0; }
+.market-cols{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.market-col{ border-radius:var(--r-md); padding:13px; background:var(--bg2); border:1px solid var(--line); }
+.market-col h4{ margin:0 0 9px; font:800 20px/1.2 var(--hf); }
+.market-chip{ direction:ltr; text-align:left; background:var(--surface); border-radius:11px; padding:8px 10px; margin-top:6px; display:flex; align-items:center; gap:7px; font-size:14px; }
+.market-chip span{ font-size:20px; }
+.duel-score{ display:flex; justify-content:center; gap:8px; margin-bottom:10px; }
+.duel-score span{ background:var(--surface); border:1px solid var(--line); border-radius:99px; padding:5px 11px; font-size:13px; }
+.market-scene{ text-align:center; }
+.market-scene .memoji{ font-size:80px; line-height:1.1; }
+.market-scene .mphrase{ direction:ltr; font:800 25px/1.25 var(--hf); margin:7px auto 15px; max-width:520px; }
+.market-picks{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.market-pick{ min-height:110px; border-radius:var(--r-lg); background:var(--surface); border:3px solid var(--line); box-shadow:var(--shadow); padding:13px; font:800 20px/1.2 var(--hf); }
+.market-pick span{ display:block; font-size:38px; margin-bottom:5px; }
+.market-pick.mall{ border-color:var(--t4); }.market-pick.souq{ border-color:var(--t1); }
+.market-pick.ok{ background:var(--goods); border-color:var(--good); }.market-pick.no{ background:var(--bads); border-color:var(--bad); animation:shake .35s; }
+@media (max-width:520px){ .md-rule{ grid-template-columns:1fr; } }
+@media (max-width:520px){ .market-cols{ grid-template-columns:1fr; } .market-pick{ font-size:17px; min-height:96px; } }
 @media (max-width:520px){ .mem{ grid-template-columns:repeat(4,1fr); gap:6px; } .mcard{ aspect-ratio:4/5; } .memo-emo{ font-size:24px; } .mface b{ font-size:12px; } .mface small{ font-size:10.5px; } .fgrid{ grid-template-columns:repeat(2,1fr); } }
 </style></head><body><div id="app"></div><div class="toast" id="toast" role="status"></div><canvas id="confetti"></canvas><script>
 const THEMES = [
@@ -282,10 +373,20 @@ const LESSONS = [
       ex: ["What will you give me for my watch?", "Are you willing to trade your pen?", "I'll make you a good offer for your book.", "OK, that's a fair deal.", "No way!"] }
   ],
   vocab: [["merchants","تجار"],["dramatically","بشكل كبير ومفاجئ"],["location","موقع"],["routes","طرق"],["exported","صُدِّر"],["rituals","طقوس دينية"],["economic","اقتصادي"],["gigantic","ضخم جداً"],["frankincense","لبان"],["dhow","سفينة شراعية"]],
+  synonyms: [
+    ["consumer","customer","n.","مستهلك / زبون","🛒"],["research","study","n.","بحث","🔬"],
+    ["connect","join","v.","يوصل / يربط","🔗"],["discover","find out","v.","يكتشف","🔎"],
+    ["ancient","old","adj.","قديم","🏺"],["various","different","adj.","متنوع / مختلف","🎨"],
+    ["reduce","decrease","v.","يقلّل","📉"],["gradually","slowly","adv.","تدريجيًا","🐢"],
+    ["quickly","fast","adv.","بسرعة","⚡"],["disease","illness","n.","مرض","🤒"],
+    ["remain","stay","v.","يبقى","📍"],["enormous","huge","adj.","ضخم","🐘"],
+    ["create","make","v.","يصنع / يخلق","🛠️"],["increase","rise","v.","يزداد","📈"]
+  ],
   games: [
     { type: "match", title: "طابق الكلمة بمعناها", pairs: [["merchants","people who buy and sell goods"],["dramatically","suddenly and greatly"],["location","position"],["routes","ways from one place to another"],["exported","sold to another country"],["rituals","religious ceremonies"],["economic","relating to trade and money"],["gigantic","enormous"]] },
     { type: "sort", title: "سفينة شراعية ولا ناقلة نفط؟", buckets: ["⛵ Dhow (A)","🚢 Tanker (B)"], items: [["powered by wind",0],["carries silk and spices",0],["made of wood",0],["triangular sail",0],["carries oil",1],["made of steel",1],["powerful engines",1],["electronic controls",1]] },
-    { type: "match", title: "طابق العنوان بالفقرة", pairs: [["Paragraph 1","The History of Trading"],["Paragraph 2","The Arabs as Traders"],["Paragraph 3","The Frankincense Trade"],["Paragraph 4","The Emergence of Oil"]] }
+    { type: "match", title: "طابق العنوان بالفقرة", pairs: [["Paragraph 1","The History of Trading"],["Paragraph 2","The Arabs as Traders"],["Paragraph 3","The Frankincense Trade"],["Paragraph 4","The Emergence of Oil"]] },
+    { type: "synonyms", title: "تحدّي صائد المرادفات" }
   ],
   quiz: [
     { q: "We skim a text to find ______.", o: ["every new word","the gist (main idea)","the grammar","the author's name"], a: 1, why: "الـ Skimming هدفه الفكرة العامة فقط." },
@@ -293,7 +394,12 @@ const LESSONS = [
     { q: "In 5000 BCE, the centre of the frankincense trade was ______.", o: ["Muscat","Dhofar","Sur","Nizwa"], a: 1, why: "النص يذكر أن ظفار كانت مركز تجارة اللبان." },
     { q: "'Sold to another country' means ______.", o: ["imported","exported","traded","bought"], a: 1, why: "export = يصدّر، import = يستورد." },
     { q: "Since the 1960s, most of Oman's income has come from ______.", o: ["frankincense","fishing","oil","silk"], a: 2, why: "من الستينات صار النفط مصدر الدخل الأساسي." },
-    { q: "A topic sentence is ______.", o: ["the last sentence of a text","the sentence with the main idea of a paragraph","a question","a title"], a: 1, why: "الجملة الرئيسية تحمل فكرة الفقرة، وغالباً في بدايتها." }
+    { q: "A topic sentence is ______.", o: ["the last sentence of a text","the sentence with the main idea of a paragraph","a question","a title"], a: 1, why: "الجملة الرئيسية تحمل فكرة الفقرة، وغالباً في بدايتها." },
+    { q: "Which word is a synonym of 'enormous'?", o: ["tiny","slow","huge","old"], a: 2, why: "enormous وhuge كلاهما يعني ضخم." },
+    { q: "To 'discover' something means to ______ it.", o: ["find out","reduce","remain","connect"], a: 0, why: "discover = find out = يكتشف." },
+    { q: "Which pair consists of adverbs?", o: ["consumer / customer","quickly / fast","create / make","ancient / old"], a: 1, why: "quickly وfast هنا يصفان طريقة حدوث الفعل، فهما ظرفان." },
+    { q: "The closest meaning to 'remain' is ______.", o: ["leave","rise","stay","make"], a: 2, why: "remain = stay = يبقى." },
+    { q: "If prices increase, they ______.", o: ["rise","decrease","stay","join"], a: 0, why: "increase = rise = يزداد." }
   ]
 },
 {
@@ -313,6 +419,16 @@ const LESSONS = [
       ex: [] }
   ],
   vocab: [["brand","علامة تجارية"],["logo","شعار"],["trademark","علامة مسجلة"],["founder","مؤسس"],["consumer","مستهلك"],["ownership","ملكية"],["derived from","مشتق من"],["heritage","تراث"]],
+  irregulars: [
+    ["kneel","knelt","knelt","يركع","🧎"],["tear","tore","torn","يمزّق","📄💥"],["freeze","froze","frozen","يتجمّد","🧊"],
+    ["forgive","forgave","forgiven","يسامح","🤝💛"],["steal","stole","stolen","يسرق","🥷"],["dig","dug","dug","يحفر","⛏️"],
+    ["rise","rose","risen","يرتفع","🌅"],["stick","stuck","stuck","يلتصق","🩹"],["hurt","hurt","hurt","يؤذي","🤕"],
+    ["hold","held","held","يمسك","✋"],["beat","beat","beaten","يهزم / يضرب","🥁"],["begin","began","begun","يبدأ","🚦"],
+    ["know","knew","known","يعرف","🧠"],["speak","spoke","spoken","يتحدث","🗣️"],["win","won","won","يفوز","🏆"],
+    ["leave","left","left","يغادر","🚪"],["sell","sold","sold","يبيع","🏷️"],["choose","chose","chosen","يختار","☝️"],
+    ["make","made","made","يصنع","🛠️"],["get","got","got","يحصل على","🎁"],["take","took","taken","يأخذ","🤲"],
+    ["give","gave","given","يعطي","🎁➡️"],["shine","shone","shone","يلمع","✨"]
+  ],
   games: [
     { type: "sort", title: "ماضي بسيط ولا مبني للمجهول؟", buckets: ["Past Simple","Past Simple Passive"], items: [["burned marks",0],["got their names",0],["chose the name",0],["changed the 'K'",0],["was taken from",1],["was shortened",1],["were introduced",1],["was derived from",1],["was created in 2008",1],["was chosen",1]] },
     { type: "pick", title: "حوّل للمبني للمجهول", items: [
@@ -322,7 +438,8 @@ const LESSONS = [
       { s: "Pemberton changed 'Kola' to 'Cola'. → 'Kola' ___ to 'Cola'.", o: ["was changed","changed","were changed","is changed"], a: 0 },
       { s: "Oman Air chose a new logo. → A new logo ___ by Oman Air.", o: ["chose","was choose","was chosen","were chosen"], a: 2 }
     ] },
-    { type: "match", title: "طابق الجملة باستخدامها", pairs: [["Microsoft was founded in 1975 by Bill Gates.","emphasise the action"],["The Omanis were great traders.","past state"],["They built a plane and then flew it.","sequence of actions"],["Bell invented the first telephone.","completed action"],["Mobile phones were not created until…","we don't know who did it"]] }
+    { type: "match", title: "طابق الجملة باستخدامها", pairs: [["Microsoft was founded in 1975 by Bill Gates.","emphasise the action"],["The Omanis were great traders.","past state"],["They built a plane and then flew it.","sequence of actions"],["Bell invented the first telephone.","completed action"],["Mobile phones were not created until…","we don't know who did it"]] },
+    { type: "verbs", title: "مغامرة الأفعال الشاذة", note: "V1 → V2 → V3" }
   ],
   quiz: [
     { q: "The first telephone ______ by Alexander Graham Bell.", o: ["invented","was invented","were invented","is invent"], a: 1, why: "مبني للمجهول مفرد: was + V3." },
@@ -350,9 +467,31 @@ const LESSONS = [
       ex: ["make: a promise, a mistake, an enemy, dinner, an impression, a joke, a profit", "do: a crossword, your duty, someone a favour, the shopping, some exercise, the washing-up, research"] }
   ],
   vocab: [["corporate","تابع لشركة"],["passion","شغف"],["compulsive","قهري / ما يقدر يتحكم فيه"],["afflicts","يصيب بشكل سلبي"],["excessive","مفرط"],["consumers","مستهلكون"],["buzz","شعور بالحماس"],["consolation","مواساة"],["affluent","ثري"],["bankruptcy","إفلاس"]],
+  makeDo: [
+    ["do","research","يُجري بحثًا","🔬","Scientists do research to discover new treatments."],
+    ["do","a crossword","يحل كلمات متقاطعة","🧩","I do a crossword every weekend."],
+    ["do","your duty","يقوم بواجبه","🎖️","You must do your duty."],
+    ["do","a favour","يؤدي معروفًا","🤝","Could you do me a favour?"],
+    ["do","the shopping","يتسوّق","🛒","We do the shopping on Friday."],
+    ["do","some exercise","يؤدي تمارين","🏃","She does some exercise every morning."],
+    ["do","the washing-up","يغسل الصحون","🫧","I'll do the washing-up tonight."],
+    ["do","homework","يعمل الواجب","📚","The students do their homework."],
+    ["do","housework","يقوم بالأعمال المنزلية","🧹","We share the housework."],
+    ["make","a profit","يربح","💰","The company made a profit."],
+    ["make","a promise","يَعِد","🤞","Never make a promise you cannot keep."],
+    ["make","a mistake","يخطئ","⚠️","Everyone makes mistakes."],
+    ["make","an enemy","يصنع عداوة","😠","Try not to make an enemy."],
+    ["make","dinner","يُحضّر العشاء","🍲","Dad is making dinner."],
+    ["make","a cake","يصنع كعكة","🎂","Let's make a cake."],
+    ["make","an impression","يترك انطباعًا","✨","Her speech made a strong impression."],
+    ["make","a joke","يمزح","😄","He made a funny joke."],
+    ["make","noise","يُحدث ضوضاء","📢","Please don't make noise."],
+    ["make","a suggestion","يقترح","💡","May I make a suggestion?"]
+  ],
   games: [
     { type: "match", title: "طابق الكلمة بمعناها", pairs: [["corporate","belonging to a company"],["passion","enthusiasm for something"],["compulsive","something you can't control"],["afflicts","affects in a negative way"],["excessive","too much"],["consumers","people who buy and use products"],["buzz","feeling of excitement"],["consolation","something that makes you feel better"],["affluent","having plenty of money"],["bankruptcy","being unable to pay your debts"]] },
-    { type: "sort", title: "Make ولا Do؟", buckets: ["make","do"], items: [["a promise",0],["a mistake",0],["an enemy",0],["dinner",0],["an impression",0],["a joke",0],["a crossword",1],["your duty",1],["someone a favour",1],["the shopping",1],["some exercise",1],["the washing-up",1]] }
+    { type: "sort", title: "Make ولا Do؟", buckets: ["make","do"], items: [["a promise",0],["a mistake",0],["an enemy",0],["dinner",0],["an impression",0],["a joke",0],["a crossword",1],["your duty",1],["someone a favour",1],["the shopping",1],["some exercise",1],["the washing-up",1]] },
+    { type: "makedo", title: "نشاط: أكمل يومك بـ Make أو Do" }
   ],
   quiz: [
     { q: "A 'shopaholic' is ______.", o: ["a shop owner","someone addicted to shopping","a cheap shop","a shopping mall"], a: 1, why: "shop + -aholic = مدمن تسوق." },
@@ -360,7 +499,10 @@ const LESSONS = [
     { q: "Please don't ______ a mistake again.", o: ["do","make","get","take"], a: 1, why: "make a mistake / make a promise." },
     { q: "'Affluent' means ______.", o: ["poor","having plenty of money","angry","addicted"], a: 1, why: "affluent = ثري." },
     { q: "'Excessive' spending means spending ______.", o: ["too much","too little","wisely","slowly"], a: 0, why: "excessive = مفرط." },
-    { q: "According to the text, shopping can be ______.", o: ["a long-term solution","a short-term fix","always harmful","never enjoyable"], a: 1, why: "النص يقول التسوق حل مؤقت وقد يخلق مشاكل أكثر." }
+    { q: "According to the text, shopping can be ______.", o: ["a long-term solution","a short-term fix","always harmful","never enjoyable"], a: 1, why: "النص يقول التسوق حل مؤقت وقد يخلق مشاكل أكثر." },
+    { q: "Scientists ______ research before publishing results.", o: ["do","make","take","give"], a: 0, why: "نقول do research من دون a في الإنجليزية القياسية." },
+    { q: "Could I ______ a suggestion?", o: ["do","make","have","put"], a: 1, why: "الصيغة الصحيحة make a suggestion." },
+    { q: "Please don't ______ so much noise.", o: ["do","make","take","work"], a: 1, why: "نقول make noise لأننا نُنتج الصوت." }
   ]
 },
 {
@@ -384,9 +526,19 @@ const LESSONS = [
       ex: ["I'd rather spend my money on a new DVD.", "I prefer traditional places.", "I prefer not to go when it's crowded."] }
   ],
   vocab: [["mall","مجمع تجاري"],["souq","سوق شعبي"],["bargaining","المساومة"],["walkways","ممرات"],["atmosphere","أجواء"],["charm","سحر / جاذبية"],["paradise","جنة"],["latest fashions","أحدث الموضات"]],
+  marketFeatures: [
+    ["coffee bars and restaurants",0,"مقاهٍ ومطاعم","☕🍽️"],["a great variety of things to buy",0,"تنوّع كبير من الأشياء للشراء","🛍️"],
+    ["easy customer parking",0,"مواقف سهلة للمتسوقين","🅿️"],["a shopper's paradise",0,"جنة للمتسوق","🤩🛍️"],
+    ["old-fashioned charm",1,"سحر الطابع القديم","🏺✨"],["narrow passages with tiny shops",1,"ممرات ضيقة ومتاجر صغيرة","🛤️"],
+    ["top brand names",0,"أشهر العلامات التجارية","🏷️"],["friendly shopkeepers",1,"باعة ودودون","🤝"],
+    ["traditional market style",1,"طابع السوق التقليدي","🧺"],["latest fashions",0,"أحدث صيحات الموضة","👗✨"],
+    ["bright lights",0,"إضاءة ساطعة","💡"],["wide walkways",0,"ممرات واسعة","🚶"],
+    ["opportunities for bargaining",1,"فرص للمساومة","💬🤝"],["quick easy shopping",0,"تسوّق سريع وسهل","⚡🛒"]
+  ],
   games: [
     { type: "sort", title: "إعجاب، عدم إعجاب، ولا تفضيل؟", buckets: ["😍 Like","😒 Dislike","🤔 Prefer"], items: [["I'm really into electronic stuff.",0],["I enjoy finding new designs.",0],["I love going to the malls.",0],["I'm not very keen on eating out.",1],["I'm not a fan of modern malls.",1],["I hate driving up and down.",1],["I'd rather spend my money on a DVD.",2],["I prefer traditional places.",2],["I prefer not to go when it's crowded.",2]] },
-    { type: "sort", title: "توقّع: مجمع ولا سوق؟", buckets: ["🏬 Mall","🧺 Souq"], items: [["easy customer parking",0],["top brand names",0],["latest fashions",0],["bright lights",0],["wide walkways",0],["quick easy shopping",0],["friendly shopkeepers",1],["traditional market style",1],["old-fashioned charm",1],["narrow passages with tiny shops",1],["opportunities for bargaining",1]] }
+    { type: "sort", title: "توقّع: مجمع ولا سوق؟", buckets: ["🏬 Mall","🧺 Souq"], items: [["easy customer parking",0],["top brand names",0],["latest fashions",0],["bright lights",0],["wide walkways",0],["quick easy shopping",0],["friendly shopkeepers",1],["traditional market style",1],["old-fashioned charm",1],["narrow passages with tiny shops",1],["opportunities for bargaining",1]] },
+    { type: "marketduel", title: "مسابقة المول أم السوق؟" }
   ],
   quiz: [
     { q: "I'm not very keen on ______ out.", o: ["eat","eating","to eat","ate"], a: 1, why: "بعد keen on يجي الفعل + ing." },
@@ -394,7 +546,12 @@ const LESSONS = [
     { q: "Which phrase expresses a PREFERENCE?", o: ["I hate crowds.","I prefer traditional places.","I'm really into sport.","I love malls."], a: 1, why: "prefer = يفضّل." },
     { q: "Which phrase expresses a DISLIKE?", o: ["I enjoy shopping.","I'm not a fan of malls.","I'd rather stay home.","I really like it."], a: 1, why: "not a fan of = ما أحب." },
     { q: "'Opportunities for bargaining' usually describes ______.", o: ["a mall","a souq","an airport","a bank"], a: 1, why: "المساومة عادة في الأسواق الشعبية." },
-    { q: "Why should you predict before listening?", o: ["To finish faster","To guess the vocabulary of the topic more easily","To skip the questions","It is not useful"], a: 1, why: "التوقع يجهز ذهنك للمفردات المتوقعة." }
+    { q: "Why should you predict before listening?", o: ["To finish faster","To guess the vocabulary of the topic more easily","To skip the questions","It is not useful"], a: 1, why: "التوقع يجهز ذهنك للمفردات المتوقعة." },
+    { q: "Where would you expect to find narrow passages with tiny shops?", o: ["A modern mall","A traditional souq","An airport","A school"], a: 1, why: "الممرات الضيقة والمتاجر الصغيرة من صفات السوق الشعبي." },
+    { q: "Which is most typical of a modern mall?", o: ["Bargaining","Old-fashioned charm","Top brand names","Tiny shops"], a: 2, why: "المجمعات الحديثة تضم أشهر العلامات التجارية." },
+    { q: "Friendly shopkeepers and traditional style describe a ______.", o: ["mall","souq","cinema","car park"], a: 1, why: "هما من صفات الأسواق التقليدية." },
+    { q: "Wide walkways and easy parking are features of a ______.", o: ["mall","souq","street stall","farm"], a: 0, why: "الممرات الواسعة والمواقف السهلة من صفات المجمع التجاري." },
+    { q: "A 'shopper's paradise' is a place that is ______.", o: ["ideal for shopping","hard to reach","very traditional","closed"], a: 0, why: "shopper's paradise تعني مكانًا مثاليًا وممتعًا للتسوق." }
   ]
 },
 {
@@ -1099,8 +1256,8 @@ const T = id => THEMES.find(t => t.id === id);
 const app = () => $("#app");
 const starsHTML = n => [0, 1, 2].map(i => `<span class="${i < n ? "" : "off"}">⭐</span>`).join("");
 const toStars = pct => pct >= 90 ? 3 : pct >= 70 ? 2 : pct >= 50 ? 1 : 0;
-const GAME_ICON = { match: "🧩", sort: "🗂️", order: "🔢", pick: "🎯", listen: "🎧", picture: "🖼️", memory: "🧠" };
-const GAME_NAME = { match: "لعبة التوصيل", sort: "لعبة التصنيف", order: "لعبة الترتيب", pick: "اختر الإجابة", listen: "اسمع واختر", picture: "خمّن من الصورة", memory: "لعبة الذاكرة" };
+const GAME_ICON = { match: "🧩", sort: "🗂️", order: "🔢", pick: "🎯", listen: "🎧", picture: "🖼️", memory: "🧠", verbs: "⚡", synonyms: "🔎", makedo: "🛠️", marketduel: "🏬" };
+const GAME_NAME = { match: "لعبة التوصيل", sort: "لعبة التصنيف", order: "لعبة الترتيب", pick: "اختر الإجابة", listen: "اسمع واختر", picture: "خمّن من الصورة", memory: "لعبة الذاكرة", verbs: "تحدّي V1 · V2 · V3", synonyms: "نشاط المرادفات", makedo: "نشاط مواقف وجمل", marketduel: "مسابقة اختيار سريعة" };
 const AUTO = [["P", { type: "picture", title: "شوف الصورة واختر الكلمة" }], ["M", { type: "memory", title: "طابق الصورة بالكلمة" }], ["L", { type: "listen", title: "اسمع الكلمة واختر معناها" }]];
 const gameKeys = l => l.games.map((g, i) => i).concat(AUTO.map(a => a[0]));
 
@@ -1200,32 +1357,30 @@ function viewHome() {
   const done = Object.keys(S.quiz).filter(k => S.quiz[k] > 0).length;
   const hr = new Date().getHours();
   const greet = hr < 12 ? "صباح الخير" : "مساء الخير";
+  const next = LESSONS.find(l => !S.quiz[l.id]) || LESSONS[0];
   chrome(`
-    <section class="hero">
-      ${owl("happy", "owl-bob")}
-      <div class="bubble"><h1>${greet}! جاهز نذاكر؟ 🎒</h1>
-      <p>كتاب Grade 12A كامل: شرح بالعربي والإنجليزي، ألعاب، واختبار لكل درس، وفي النهاية اختبار شامل يجهزك للنهائي.</p></div>
+    <section class="home-hero">
+      <div class="hero-copy"><span class="hero-kicker">GRADE 12A · SEMESTER ONE</span><h1>${greet}، خلّنا ننجز ✦</h1><p>شرح بصري، تدريب ذكي، وتحديات توصّلك للاختبار بثقة.</p><button class="hero-cta" data-go="#/l/${next.id}/explain">تابع رحلتك <span>←</span></button></div>
+      <svg class="hero-art" viewBox="0 0 240 220" aria-hidden="true"><circle cx="110" cy="112" r="76" fill="#fff" opacity=".08"/><path d="M48 170h150" stroke="#fff" opacity=".18" stroke-width="3" stroke-linecap="round"/><g class="float"><rect x="58" y="47" width="112" height="133" rx="18" fill="#fff"/><rect x="72" y="63" width="84" height="11" rx="5" fill="#E7EAFA"/><rect x="72" y="84" width="62" height="8" rx="4" fill="#DAF1E8"/><rect x="72" y="101" width="74" height="8" rx="4" fill="#FCEBDD"/><circle cx="91" cy="139" r="19" fill="#6F7DD0"/><path d="M82 140l7 7 13-18" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M128 132h28M128 145h20" stroke="#D5E2DB" stroke-width="7" stroke-linecap="round"/></g><path d="M154 31l19-11 19 11-19 11z" fill="#F2BE45"/><path d="M188 32v17" stroke="#F2BE45" stroke-width="4" stroke-linecap="round"/><circle cx="42" cy="82" r="6" fill="#5CC6A6"/><path d="M37 25l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#fff" opacity=".75"/></svg>
     </section>
-    <div class="stats">
+    <div class="stats home-stats">
       <div class="stat"><b>${done}/${LESSONS.length}</b><span>دروس مجتازة</span></div>
       <div class="stat"><b>${totalStars()}</b><span>نجمة من ${maxStars()}</span></div>
       <div class="stat"><b>${S.finalBest == null ? "—" : S.finalBest + "%"}</b><span>أفضل نتيجة نهائي</span></div>
     </div>
     ${(() => { const all = LESSONS.flatMap(l => l.vocab.map(v => ({ en: v[0], ar: v[1], l }))); const w = all[Math.floor(Date.now() / 864e5) % all.length];
       return `<div class="wod"><span class="wod-emo">${pic(w.en)}</span><div style="flex:1"><small>كلمة اليوم</small><b class="en">${esc(w.en)}</b><span>${esc(w.ar)}</span></div>${sayBtn(w.en)}</div>`; })()}
+    <div class="section-label"><h2>محاور المنهج</h2></div>
     <nav class="path" aria-label="المحاور">
       ${THEMES.map(t => { const p = themeProgress(t.id); return `
         <button class="stop ${t.color}" data-go="#/t/${t.id}">
           <span class="badge">${t.icon}</span>
-          <span style="flex:1"><span class="sub">المحور ${t.id}</span><h3>${t.ar}</h3><span class="sub en" style="display:block;text-align:right">${t.en}</span>
+          <span style="flex:1"><span class="sub en" style="display:block;text-align:right">Theme ${t.id}</span><h3 class="en" style="text-align:right">${t.en}</h3><span class="sub" style="display:block">${t.ar}</span>
           <span class="prog"><i style="width:${p}%"></i></span></span>
         </button>`; }).join("")}
     </nav>
-    <button class="final-card" data-go="#/final">
-      <span class="badge">🏆</span>
-      <span><h3>الاختبار النهائي الشامل</h3><p>30 سؤالاً من كل الكتاب مع مراجعة لأخطائك</p></span>
-    </button>
-    <p class="tip">💡 <b>نصيحة:</b> اقرأ الشرح أول، العب الألعاب، وبعدها سوِّ الاختبار. اضغط 🔊 عشان تسمع النطق.</p>
+    <button class="final-card" data-go="#/final"><span class="badge">🏆</span><span><h3>Exam · الاختبار النهائي الشامل</h3><p>30 سؤالًا من جميع الـThemes مع مراجعة الأخطاء</p></span></button>
+    <p class="tip">💡 <b>مسارك الذكي:</b> افهم الفكرة في الشرح، ثبّتها باللعبة، ثم اختبر نفسك.</p>
   `);
 }
 
@@ -1233,14 +1388,21 @@ function viewTheme(tid) {
   const t = T(+tid); if (!t) return go("#/");
   const ls = LESSONS.filter(l => l.theme === t.id);
   chrome(`
-    <div class="thead ${t.color}"><span class="emo">${t.icon}</span><div><h2>المحور ${t.id}: ${t.ar}</h2><div class="en">${t.en}</div></div></div>
+    <div class="thead ${t.color}"><span class="emo">${t.icon}</span><div><div class="en" style="text-align:right;font-size:14px">Theme ${t.id}</div><h2 class="en" style="text-align:right">${t.en}</h2><div>${t.ar}</div></div></div>
     <div class="lessons ${t.color}">
       ${ls.map(l => `
-      <button class="lrow" data-go="#/l/${l.id}/explain">
-        <span class="lnum">${l.extra ? "★" : l.unit}</span>
-        <span class="tt"><b>${esc(l.en)}</b><span>${esc(l.ar)}<span class="chip">${l.skillAr}</span></span></span>
-        <span class="stars">${starsHTML(lessonStars(l.id))}</span>
-      </button>`).join("")}
+      <article class="unit-card">
+        <button class="unit-main" data-go="#/l/${l.id}/explain">
+          <span class="lnum">${l.extra ? "★" : "U" + l.unit}</span>
+          <span class="tt"><b>${esc(l.en)}</b><span>${esc(l.ar)}<span class="chip">${l.skillAr}</span></span></span>
+          <span class="stars">${starsHTML(lessonStars(l.id))}</span>
+        </button>
+        <div class="unit-actions" aria-label="محتويات ${esc(l.en)}">
+          <button data-go="#/l/${l.id}/explain">📘 Explanations</button>
+          <button data-go="#/l/${l.id}/games">🎮 Games</button>
+          <button data-go="#/l/${l.id}/quiz">✅ Test</button>
+        </div>
+      </article>`).join("")}
     </div>
   `, { back: "#/", cls: t.color });
 }
@@ -1261,13 +1423,11 @@ function viewLesson(id, tab = "explain") {
 }
 
 function explainHTML(l) {
-  const lang = S.lang;
-  const seg = `<div class="seg" role="group" aria-label="لغة الشرح">${[["ar", "عربي"], ["en", "English"], ["both", "الاثنين"]].map(([k, n]) => `<button data-lang-set="${k}" aria-pressed="${lang === k}">${n}</button>`).join("")}</div>`;
   const secs = l.explain.map(s => `
     <article class="card">
       <h3>${esc(s.h)}</h3>
-      ${lang !== "en" ? `<p>${esc(s.ar)}</p>` : ""}
-      ${lang !== "ar" ? `<div class="en-p en">${sayBtn(s.en)}<span>${esc(s.en)}</span></div>` : ""}
+      <p>${esc(s.ar)}</p>
+      <div class="en-p en">${sayBtn(s.en)}<span>${esc(s.en)}</span></div>
       ${s.ex && s.ex.length ? `<ul class="ex">${s.ex.map(e => `<li class="en">${sayBtn(e)}<span>${esc(e)}</span></li>`).join("")}</ul>` : ""}
     </article>`).join("");
   const vocab = `<article class="card"><h3>🖼️ كلمات الدرس بالصور | Picture words</h3>
@@ -1275,7 +1435,11 @@ function explainHTML(l) {
     <div class="fgrid">${l.vocab.map(([en, ar]) => `<div class="flip" tabindex="0" role="button" aria-label="${esc(en)}"><div class="fin">
       <div class="ff"><span class="femo">${pic(en)}</span><b class="en">${esc(en)}</b>${sayBtn(en)}</div>
       <div class="fb"><span class="femo sm">${pic(en)}</span><b>${esc(ar)}</b><small class="en">${esc(en)}</small></div></div></div>`).join("")}</div></article>`;
-  return seg + vocab + secs + `<p class="pageref">📖 راجع النصوص كاملة في كتابك (Coursebook ص ${l.page})</p>
+  const makeDo = l.makeDo ? `<article class="card"><h3>🛠️ Do or Make? | الفرق بينهما</h3><div class="md-rule"><div><h4>DO</h4><b>مهام، واجبات، أعمال ونشاطات</b><small>نركّز على تنفيذ العمل نفسه: do homework, do exercise.</small></div><div><h4>MAKE</h4><b>صنع أو إنتاج نتيجة جديدة</b><small>نركّز على الشيء الناتج: make a cake, make a promise.</small></div></div><div class="syn-note"><b>قاعدة مهمة:</b> هذه Collocations؛ أي عبارات ثابتة تُحفظ كوحدة واحدة. نقول <span class="en">do research</span> عادةً من دون <span class="en">a</span>.</div><div class="md-grid">${l.makeDo.map(m => `<div class="md-card ${m[0]}"><span class="mpic" aria-hidden="true">${m[3]}</span><span><b>${esc(m[0])} ${esc(m[1])}</b><small>${esc(m[2])}</small></span>${sayBtn(m[0] + ' ' + m[1])}</div>`).join("")}</div><p class="pageref">📖 Coursebook ص 7 · Activity 4</p></article>` : "";
+  const markets = l.marketFeatures ? `<article class="card"><h3>🏬 Mall or Market & Souq? | أين تجدها؟</h3><div class="syn-note"><b>قبل الاستماع:</b> صنّف الصفات لتتوقّع ما ستسمعه. المول حديث ومنظّم وسريع، أما السوق الشعبي فتغلب عليه الأصالة والتواصل والمساومة.</div><div class="market-cols"><div class="market-col"><h4>🏬 Malls | المجمعات</h4>${l.marketFeatures.filter(m => m[1] === 0).map(m => `<div class="market-chip"><span>${m[3]}</span><b>${esc(m[0])}</b>${sayBtn(m[0])}</div>`).join("")}</div><div class="market-col"><h4>🧺 Markets & Souqs | الأسواق</h4>${l.marketFeatures.filter(m => m[1] === 1).map(m => `<div class="market-chip"><span>${m[3]}</span><b>${esc(m[0])}</b>${sayBtn(m[0])}</div>`).join("")}</div></div><p class="pageref">📖 Coursebook ص 8–9 · Listening and Speaking</p></article>` : "";
+  const synonyms = l.synonyms ? `<article class="card"><h3>🔎 Synonyms | المرادفات</h3><div class="syn-note"><b>الكلمتان المترادفتان لهما معنى واحد أو متقارب.</b><br><small>موضع المهارة: Coursebook ص 3، Activity 4. والقائمة مراجعة لكلمات Theme 1.</small></div><div class="syn-grid">${l.synonyms.map(s => `<div class="syn-card"><span class="pos">${esc(s[2])}</span><span class="spic" aria-hidden="true">${s[4]}</span><span class="pair"><b>${esc(s[0])} = ${esc(s[1])}</b><small>${esc(s[3])}</small></span>${sayBtn(s[0] + ', ' + s[1])}</div>`).join("")}</div></article>` : "";
+  const irregulars = l.irregulars ? `<article class="card"><img class="verb-hero" src="assets/irregular-verbs-quest.png" alt="مغامرة تعلم الأفعال الشاذة"><div class="verb-intro"><span class="badge">BOOK · P.5 · ACTIVITY 4</span><div><h3 style="margin:0">⚡ دليل الأفعال الشاذة</h3><small>اضغط 🔊 لسماع التصريفات، ثم اختبر نفسك في اللعبة.</small></div></div><div class="verb-grid">${l.irregulars.map(v => `<div class="verb-card"><span class="vpic" aria-hidden="true">${v[4]}</span><span class="forms"><b>${esc(v[0])} · ${esc(v[1])} · ${esc(v[2])}</b><small>${esc(v[3])}</small></span>${sayBtn(v.slice(0,3).join(', '))}</div>`).join("")}</div></article>` : "";
+  return vocab + makeDo + markets + synonyms + irregulars + secs + `<p class="pageref">📖 راجع النصوص كاملة في كتابك (Coursebook ص ${l.page})</p>
     <button class="big-btn" data-go="#/l/${l.id}/games">يلا نلعب 🎮</button>`;
 }
 
@@ -1328,7 +1492,95 @@ function playGame(id, gi) {
   if (gi === "P") return gamePicture(l);
   if (gi === "M") return gameMemory(l);
   gi = +gi; const g = l.games[gi]; if (!g) return go("#/l/" + id + "/games");
-  ({ match: gameMatch, sort: gameSort, order: gameOrder, pick: gamePick })[g.type](l, g, gi);
+  ({ match: gameMatch, sort: gameSort, order: gameOrder, pick: gamePick, verbs: gameVerbs, synonyms: gameSynonyms, makedo: gameMakeDo, marketduel: gameMarketDuel })[g.type](l, g, gi);
+}
+
+function gameMarketDuel(l, g, gi) {
+  const items = shuffle(l.marketFeatures || []);
+  let k = 0, mistakes = 0, score = 0, streak = 0;
+  stage(l, g.title, `<div id="marketRound"></div>`);
+  const show = () => {
+    const m = items[k];
+    $("#marketRound").innerHTML = `<div class="market-scene"><div class="duel-score"><span>🏅 النقاط: <b>${score}</b></span><span>🔥 المتتالية: <b>${streak}</b></span></div><div class="memoji" aria-hidden="true">${m[3]}</div><p class="mphrase">${sayBtn(m[0])} ${esc(m[0])}</p><p style="color:var(--muted)">${esc(m[2])}</p><div class="market-picks"><button class="market-pick mall" data-v="0"><span>🏬</span>Mall<small>مجمع تجاري</small></button><button class="market-pick souq" data-v="1"><span>🧺</span>Market & Souq<small>سوق شعبي</small></button></div><div id="after"></div></div>`;
+    meter(k / items.length);
+  };
+  show();
+  $("#stage").onclick = e => {
+    const b = e.target.closest(".market-pick"); if (!b || b.parentElement.classList.contains("done")) return;
+    const m = items[k], box = b.parentElement, ok = +b.dataset.v === m[1]; box.classList.add("done");
+    b.classList.add(ok ? "ok" : "no");
+    if (ok) { streak++; score += 100 + Math.min(streak * 10, 50); sfx.ok(); } else { mistakes++; streak = 0; [...box.children].find(x => +x.dataset.v === m[1])?.classList.add("ok"); sfx.no(); }
+    $("#after").innerHTML = `<div class="why"><span style="font-size:30px">${m[1] ? "🧺" : "🏬"}</span><span><b class="en">${esc(m[0])}</b><br>${m[1] ? "Market & Souq · سوق شعبي" : "Mall · مجمع تجاري"}</span></div><button class="big-btn" id="marketNext">${k + 1 === items.length ? "النتيجة النهائية 🏆" : "الصفة التالية ←"}</button>`;
+    $("#marketNext").onclick = () => { k++; if (k === items.length) finishGame(l, gi, mistakes, items.length); else show(); };
+  };
+}
+
+function gameMakeDo(l, g, gi) {
+  const items = shuffle(l.makeDo || []).slice(0, 12);
+  let k = 0, mistakes = 0;
+  stage(l, g.title, `<div id="mdRound"></div>`);
+  const show = () => {
+    const m = items[k];
+    $("#mdRound").innerHTML = `<div class="md-scene"><div class="mpic" aria-hidden="true">${m[3]}</div><p class="phrase">___ ${esc(m[1])}</p><p style="color:var(--muted)">${esc(m[2])}</p><div class="qbox"><div class="q"><span>اختر الفعل الصحيح لإكمال العبارة.</span></div></div><div class="buckets"><button class="bucket" data-v="do">DO</button><button class="bucket" data-v="make">MAKE</button></div><div id="after"></div></div>`;
+    meter(k / items.length);
+  };
+  show();
+  $("#stage").onclick = e => {
+    const b = e.target.closest(".bucket"); if (!b || b.parentElement.classList.contains("done")) return;
+    const m = items[k], box = b.parentElement, ok = b.dataset.v === m[0]; box.classList.add("done");
+    b.classList.add(ok ? "ok" : "no");
+    if (!ok) { mistakes++; [...box.children].find(x => x.dataset.v === m[0])?.classList.add("ok"); sfx.no(); } else sfx.ok();
+    speak(m[4]);
+    $("#after").innerHTML = `<div class="why"><span class="mpic">${m[3]}</span><span><b class="en">${esc(m[0])} ${esc(m[1])}</b><br>${esc(m[4])}<br><small>${esc(m[2])}</small></span></div><button class="big-btn" id="mdNext">${k + 1 === items.length ? "شاهد النتيجة 🏆" : "الموقف التالي ←"}</button>`;
+    $("#mdNext").onclick = () => { k++; if (k === items.length) finishGame(l, gi, mistakes, items.length); else show(); };
+  };
+}
+
+function gameSynonyms(l, g, gi) {
+  const source = l.synonyms || [], items = shuffle(source).slice(0, 10);
+  let k = 0, mistakes = 0, streak = 0;
+  stage(l, g.title, `<div id="synRound"></div>`);
+  const show = () => {
+    const s = items[k], correct = s[1];
+    const wrong = shuffle(source.filter(x => x[1] !== correct).map(x => x[1])).slice(0, 3);
+    const options = shuffle([correct, ...wrong]);
+    $("#synRound").innerHTML = `<div class="syn-play"><span class="syn-streak">🔥 سلسلة صحيحة: <b>${streak}</b></span><div class="spic" aria-hidden="true">${s[4]}</div><p class="prompt-word">${sayBtn(s[0])} ${esc(s[0])}</p><p class="meaning">${esc(s[3])} · ${esc(s[2])}</p><div class="qbox"><div class="q"><span>ما مرادف هذه الكلمة؟</span></div></div><div class="opts">${options.map((o,j) => `<button class="opt" data-v="${esc(o)}"><span class="k">${"ABCD"[j]}</span><span>${esc(o)}</span></button>`).join("")}</div><div id="after"></div></div>`;
+    meter(k / items.length);
+  };
+  show();
+  $("#stage").onclick = e => {
+    const b = e.target.closest(".opt"); if (!b || b.parentElement.classList.contains("done")) return;
+    const s = items[k], box = b.parentElement, ok = b.dataset.v === s[1]; box.classList.add("done");
+    b.classList.add(ok ? "ok" : "no");
+    if (ok) { streak++; sfx.ok(); } else { mistakes++; streak = 0; [...box.children].find(x => x.dataset.v === s[1])?.classList.add("ok"); sfx.no(); }
+    speak(s[0] + ", " + s[1]);
+    $("#after").innerHTML = `<div class="why"><span class="spic">${s[4]}</span><span><b class="en">${esc(s[0])} = ${esc(s[1])}</b><br>${esc(s[3])}</span></div><button class="big-btn" id="synNext">${k + 1 === items.length ? "شاهد النتيجة 🏆" : "الكلمة التالية ←"}</button>`;
+    $("#synNext").onclick = () => { k++; if (k === items.length) finishGame(l, gi, mistakes, items.length); else show(); };
+  };
+}
+
+function gameVerbs(l, g, gi) {
+  const source = l.irregulars || [];
+  const items = shuffle(source).slice(0, 12).map((v, round) => ({ v, col: round % 2 ? 2 : 1 }));
+  let k = 0, mistakes = 0;
+  stage(l, g.title, `<div id="verbRound"></div>`);
+  const show = () => {
+    const it = items[k], v = it.v, col = it.col, correct = v[col];
+    const wrong = shuffle([...new Set(source.map(x => x[col]).filter(x => x !== correct))]).slice(0, 3);
+    const options = shuffle([correct, ...wrong]);
+    $("#verbRound").innerHTML = `<div class="verb-play"><div class="vscene" aria-hidden="true">${v[4]}</div><p class="base">${sayBtn(v[0])} <b>${esc(v[0])}</b></p><p class="meaning">${esc(v[3])}</p><div class="form-labels"><span>V1<b>${esc(v[0])}</b></span><span>V2<b>${col === 1 ? "?" : esc(v[1])}</b></span><span>V3<b>${col === 2 ? "?" : esc(v[2])}</b></span></div><div class="qbox"><div class="q"><span>اختر ${col === 1 ? "الماضي البسيط (V2)" : "التصريف الثالث (V3)"}</span></div></div><div class="opts">${options.map((o,j) => `<button class="opt" data-v="${esc(o)}"><span class="k">${"ABCD"[j]}</span><span>${esc(o)}</span></button>`).join("")}</div><div id="after"></div></div>`;
+    meter(k / items.length);
+  };
+  show();
+  $("#stage").onclick = e => {
+    const b = e.target.closest(".opt"); if (!b || b.parentElement.classList.contains("done")) return;
+    const it = items[k], correct = it.v[it.col], box = b.parentElement; box.classList.add("done");
+    const ok = b.dataset.v === correct; b.classList.add(ok ? "ok" : "no");
+    if (!ok) { mistakes++; [...box.children].find(x => x.dataset.v === correct)?.classList.add("ok"); sfx.no(); } else sfx.ok();
+    speak(it.v.slice(0,3).join(", "));
+    $("#after").innerHTML = `<div class="why"><span class="vpic">${it.v[4]}</span><span><b class="en">${esc(it.v[0])} → ${esc(it.v[1])} → ${esc(it.v[2])}</b><br>${esc(it.v[3])}</span></div><button class="big-btn" id="verbNext">${k + 1 === items.length ? "شاهد النتيجة 🏆" : "التالي ←"}</button>`;
+    $("#verbNext").onclick = () => { k++; if (k === items.length) finishGame(l, gi, mistakes, items.length); else show(); };
+  };
 }
 
 function gameMatch(l, g, gi) {
